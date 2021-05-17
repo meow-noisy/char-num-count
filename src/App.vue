@@ -1,28 +1,24 @@
+// 置き換わるくさい
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <p>{{ countCharNum }}</p>
+    <input v-model="message" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// コンポーネントわたすことになってんのか。
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data: function () {
+    return {
+      message: "Hello Vue!",
+      cnt: "Hello Vue!".length,
+    };
+  },
+  computed: {
+    countCharNum: function () {
+      return this.message.length;
+    },
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
